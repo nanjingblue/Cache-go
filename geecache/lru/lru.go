@@ -9,7 +9,7 @@ type Cache struct {
 	maxBytes int64 // maximum memory allowed
 	nbytes   int64 // current used memory
 	ll       *list.List
-	cache    map[string]*list.Element
+	cache    map[string]*list.Element // value is a pointer to the corresponding node in the bidirectional linked list
 	// optional and executed when entry is purged
 	OnEvicted func(key string, value Value)
 }

@@ -14,6 +14,7 @@ var db = map[string]string{
 }
 
 func main() {
+	log.Printf("%v", 2<<10)
 	geecache.NewGroup("scores", 2<<10, geecache.GetterFunc(
 		func(key string) ([]byte, error) {
 			log.Println("[SlowDB] search key", key)
