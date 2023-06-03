@@ -37,7 +37,6 @@ func (g *Group) Do(key string, fn func() (interface{}, error)) (interface{}, err
 
 	c := &Call{}
 	c.wg.Add(1)
-	g.mu.Lock()
 	g.m[key] = c
 	g.mu.Unlock()
 
